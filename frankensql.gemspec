@@ -9,9 +9,9 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Elliott Young"]
   spec.email         = ["elliott.a.young@gmail.com"]
 
-  spec.summary       = %q{TODO: Write a short summary, because Rubygems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.summary       = "A gem to convert your params to a variable SQL query based on what is present and what is not. Intended for large DB SQL search."
+  spec.description   = "A gem to convert your params to a variable SQL query based on what is present and what is not. Intended for large DB SQL search."
+  spec.homepage      = "https://github.com/ElliottAYoung/frankensql"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org by setting 'allowed_push_host', or
