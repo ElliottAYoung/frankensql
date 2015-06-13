@@ -1,8 +1,6 @@
 # Frankensql
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/frankensql`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+This is the Frankensql gem, it's fairly basic as of right now, what it does is it takes in a table and some parameters and will create a SQL query based on what is there, omitting what is not, to allow for the query to be executed without checking unnecessary fields. I originally designed this to go with a basic search engine where I had to check through a quarter million records, using this approach I was able to get it subsecond and working beautifully. I made this gem with the hope it could help someone else out too!
 
 ## Installation
 
@@ -22,7 +20,19 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Using the gem is fairly simple, there is one useable command
+
+```ruby
+Frankensql.search(table, params)
+```
+
+This command takes in the table that you want to search and the entire params hash. It will then output the SQL query based on which params are present and which are not. To then use this SQL query with ActiveRecord just run the command like so:
+
+```ruby
+ActiveRecord::Base.connection.execute(Frankensql.search(table, params))
+```
+
+This should return a JSON object based on whatever data you have living in your DB.
 
 ## Development
 
